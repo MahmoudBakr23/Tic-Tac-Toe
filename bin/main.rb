@@ -36,14 +36,24 @@ display_board(board)
 
 move_counter = 1
 
+def valid_number(move)
+  while move.nil? || move.to_i < 1 || move.to_i > 9
+    puts 'Please insert a valid number (1-9)'
+    move = gets.chomp.to_i
+  end
+  move
+end
+
 while move_counter < 10
   if move_counter.odd?
     puts "#{player_one}'s move"
     move = gets.chomp.to_i
+    move = valid_number(move)
     board = mark_on_board(board, move, 'X')
   else
     puts "#{player_two}'s move"
     move = gets.chomp.to_i
+    move = valid_number(move)
     board = mark_on_board(board, move, 'O')
   end
   display_board(board)
