@@ -34,8 +34,6 @@ end
 
 display_board(board)
 
-move_counter = 1
-
 def valid_number(move)
   while move.nil? || move.to_i < 1 || move.to_i > 9
     puts 'Please insert a valid number (1-9)'
@@ -44,36 +42,28 @@ def valid_number(move)
   move
 end
 
+move_counter = 1
+
 while move_counter < 10
   if move_counter.odd?
     puts "#{player_one}'s move"
     move = gets.chomp.to_i
     move = valid_number(move)
-    # board = mark_on_board(board, move, 'X')
-  else
+  elsif move_counter.even?
     puts "#{player_two}'s move"
     move = gets.chomp.to_i
     move = valid_number(move)
-    # board = mark_on_board(board, move, 'O')
   end
   if move == 3
     display_board(board)
-    if rand(1..9).odd?
-      puts "#{player_one} is the winner!"
-    else
-      puts "#{player_two} is the winner!"
-    end
+    puts "#{player_one} is the winner!" if rand(1..9).odd?
     break
   elsif move == 4
     display_board(board)
-    if rand(1..9).even?
-      puts "#{player_one} is the winner!"
-    else
-      puts "#{player_two} is the winner!"
-    end
+    puts "#{player_two} is the winner!" if rand(1..9).even?
     break
   elsif move_counter == 9
-    puts "DRAW!"
+    puts 'DRAW!'
   end
   display_board(board)
   move_counter += 1
