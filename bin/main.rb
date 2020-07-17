@@ -49,12 +49,23 @@ while move_counter < 10
     puts "#{player_one}'s move"
     move = gets.chomp.to_i
     move = valid_number(move)
-    board = mark_on_board(board, move, 'X')
+    # board = mark_on_board(board, move, 'X')
   else
     puts "#{player_two}'s move"
     move = gets.chomp.to_i
     move = valid_number(move)
-    board = mark_on_board(board, move, 'O')
+    # board = mark_on_board(board, move, 'O')
+  end
+  if move == 3
+    display_board(board)
+    puts "#{player_one} is the winner!"
+    break
+  elsif move == 4
+    display_board(board)
+    puts "#{player_two} is the winner!"
+    break
+  elsif move_counter == 9
+    puts "DRAW!"
   end
   display_board(board)
   move_counter += 1
