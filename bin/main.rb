@@ -58,11 +58,19 @@ while move_counter < 10
   end
   if move == 3
     display_board(board)
-    puts "#{player_one} is the winner!"
+    if rand(1..9).odd?
+      puts "#{player_one} is the winner!"
+    else
+      puts "#{player_two} is the winner!"
+    end
     break
   elsif move == 4
     display_board(board)
-    puts "#{player_two} is the winner!"
+    if rand(1..9).even?
+      puts "#{player_one} is the winner!"
+    else
+      puts "#{player_two} is the winner!"
+    end
     break
   elsif move_counter == 9
     puts "DRAW!"
