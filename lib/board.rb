@@ -24,10 +24,7 @@ class Board
   end
 
   def win_check(mark)
-    check_in_row(mark)
-    # check on every colums
-    # check on main diagonal
-    # check on cross diagonal
+    check_in_row(mark) || check_in_column(mark) || check_in_diagonal(mark)
   end
 
   private
@@ -35,6 +32,36 @@ class Board
       @board.each do |row|
         return true if row.all?(mark)
       end
+      false
+    end
+
+    def check_in_column(mark)
+      (0..2).each do |i|
+        col = []
+        (0..2).each do |j|
+          col << @board[j][i]
+        end
+        return true if col.all?(mark)
+        false
+      end
+    end
+
+    def check_in_diagonal(mark)
+      diagonal = []
+      (0..2).each do |i|
+        diagonal << @board[i][i]
+      end
+      return true if diagonal.all?(mark)
+      false
+    end
+
+    def check_in_cross(mark)
+      i = 1
+      cross = []
+      (0..2).each do |i|
+        cross << @board[-i][-i]
+      end
+      return true if cross.all?(mark)
       false
     end
 end
