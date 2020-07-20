@@ -51,7 +51,7 @@ end
 move_counter = 1
 game = true
 
-while move_counter < 10 && game
+while game
   if move_counter.odd?
     current_player(player_one)
     if rand(1..9).odd?
