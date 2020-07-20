@@ -21,8 +21,6 @@ board = Board.new
 
 board.display_board
 
-move_counter = 1
-
 def valid_number(move)
   while move.nil? || move.to_i < 1 || move.to_i > 9
     puts 'Please insert a valid number (1-9)'
@@ -61,7 +59,9 @@ end
 
 game = true
 
-while move_counter < 10 && game
+move_counter = 1
+
+while game
   game = if move_counter.odd?
            switch_user(player_one, board, move_counter)
          else
