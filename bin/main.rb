@@ -48,8 +48,8 @@ def current_player(player_rate)
   valid_number(move)
 end
 
-game = true
 move_counter = 1
+game = true
 
 while move_counter < 10 && game
   if move_counter.odd?
