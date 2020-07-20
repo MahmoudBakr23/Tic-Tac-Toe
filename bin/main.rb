@@ -42,28 +42,32 @@ def valid_number(move)
   move
 end
 
+def current_player(player_rate)
+  puts "#{player_rate}'s move"
+  move = gets.chomp.to_i
+  valid_number(move)
+end
+
+game = true
 move_counter = 1
 
-while move_counter < 10
+while move_counter < 10 && game
   if move_counter.odd?
-    puts "#{player_one}'s move"
-    move = gets.chomp.to_i
-    move = valid_number(move)
-  elsif move_counter.even?
-    puts "#{player_two}'s move"
-    move = gets.chomp.to_i
-    move = valid_number(move)
+    current_player(player_one)
+    if rand(1..9).odd?
+      puts "#{player_one} is the winner!"
+      game = false
+    end
+  else
+    current_player(player_two)
+    if rand(1..9).even?
+      puts "#{player_two} is the winner!"
+      game = false
+    end
   end
-  if move == 3
-    display_board(board)
-    puts "#{player_one} is the winner!" if rand(1..9).odd?
-    break
-  elsif move == 4
-    display_board(board)
-    puts "#{player_two} is the winner!" if rand(1..9).even?
-    break
-  elsif move_counter == 9
+  if move_counter == 9
     puts 'DRAW!'
+    game = false
   end
   display_board(board)
   move_counter += 1
