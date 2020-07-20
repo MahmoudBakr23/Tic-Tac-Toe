@@ -1,14 +1,16 @@
 #!/usr/bin/env ruby
 
 puts "player one's name ..."
-player_one = gets.chomp
+name = gets.chomp
+player_one = { name: name, mark: 'X' }
 puts
 puts "player two's name ..."
-player_two = gets.chomp
+name = gets.chomp
+player_two = { name: name, mark: 'O' }
 puts
 
-puts "#{player_one} is X"
-puts "#{player_two} is O"
+puts "#{player_one[:name]} is #{player_one[:mark]}"
+puts "#{player_two[:name]} is #{player_two[:mark]}"
 puts
 
 board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -43,32 +45,50 @@ def valid_number(move)
 end
 
 def current_player(player_rate)
-  puts "#{player_rate}'s move"
+  puts "#{player_rate[:name]}'s move"
   move = gets.chomp.to_i
   valid_number(move)
 end
 
+def switch_player(player_counter, player_one, player_two)
+  if player_counter.zero?
+    player_counter += 1
+    [player_one, player_counter]
+  else
+    player_counter = 0
+    [player_two, player_counter]
+  end
+end
+
+def win
+  x = rand(0..1)
+  return true if x == 1
+
+  false
+end
+
+def draw
+  x = rand(2..3)
+  return true if x == 2
+
+  false
+end
+
 move_counter = 1
 game = true
+player_counter = 0
 
 while game
-  if move_counter.odd?
-    current_player(player_one)
-    if rand(1..9).odd?
-      puts "#{player_one} is the winner!"
-      game = false
-    end
-  else
-    current_player(player_two)
-    if rand(1..9).even?
-      puts "#{player_two} is the winner!"
-      game = false
-    end
-  end
-  if move_counter == 9
-    puts 'DRAW!'
+  player, player_counter = switch_player(player_counter, player_one, player_two)
+  current_player(player)
+  if win
+    puts "#{player[:name]} is winner"
+    game = false
+  elsif draw
+    puts 'Game is draw'
     game = false
   end
+
   display_board(board)
   move_counter += 1
 end
