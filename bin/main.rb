@@ -47,14 +47,13 @@ def switch_user(player_turn, board, move_counter)
   board.mark_on_board(move, player_turn.mark)
   if move_counter >= 5 && board.win_check(player_turn.mark)
     puts "#{player_turn.name} is winner"
-    return false
-  end
-
-  if move_counter >= 5 && move_counter == 9
+    false
+  elsif move_counter >= 5 && move_counter == 9
     puts 'Draw game' unless board.win_check(player_turn.mark)
     false
+  else
+    true
   end
-  true
 end
 
 game = true
