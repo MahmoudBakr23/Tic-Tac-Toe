@@ -53,6 +53,7 @@
 To get a local copy of the repository please run the following commands on your terminal:
 
 $ git clone <https://github.com/MahmoudBakr23/Tic-Tac-Toe.git>
+
 $ cd <Tic-Tac-Toe>
 
 ## Authors
