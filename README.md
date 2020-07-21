@@ -18,21 +18,21 @@
 
 - (1) If any row
 
-- X X X
-  4 5 6
-  7 8 9
+-  X X X
+-  4 5 6
+-  7 8 9
 
 - (2) If any column
 
-- X 2 3
-  X 5 6
-  X 8 9
+-  X 2 3
+-  X 5 6
+-  X 8 9
 
 - (3) If any diagonal
 
-- X 2 3
-  4 X 6
-  7 8 X
+-  X 2 3
+-  4 X 6
+-  7 8 X
 
 - The same thing applies to player two (O)
 
