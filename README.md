@@ -46,7 +46,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://repl.it/@MahmoudBakr23/Tic-Tac-Toe-Game#main.rb)
 
 ## Getting Started
 
@@ -67,11 +67,15 @@ $ git clone
 
 👤 **Muhammad**
 
-- Github: [@]()
+- Github: [@talhawaqar](https://github.com/talhawaqar)
 
-- Twitter: [@]()
+- Linkedin: [@Muhammad Talha Waqar](https://www.linkedin.com/in/talha-waqar-977257145/)
 
-- Linkedin: []()
+- Twitter: [@MuhammadTalhaW4](https://twitter.com/MuhammadTalhaW4)
+
+- email: (talhawaqar007@hotmail.com)
+
+- email: (talhawaqar007@gmail.com)
 
 ## �� Contributing
 
