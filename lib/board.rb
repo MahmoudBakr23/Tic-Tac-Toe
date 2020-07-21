@@ -13,7 +13,7 @@ class Board
       end
     end
   end
-  
+
   def win_check(mark)
     return true if check_in_row(mark) || check_in_column(mark) || check_in_diagonal(mark) || check_in_cross(mark)
 
