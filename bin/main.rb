@@ -19,7 +19,17 @@ puts
 
 board = Board.new
 
-board.display_board
+def display_board(board)
+  (0..board.board.length - 1).each do |i|
+    (0..board.board.length - 1).each do |j|
+      print board.board[i][j].to_s + ' '
+    end
+    puts
+  end
+  puts
+end
+
+display_board(board)
 
 def valid_number(move)
   while move.nil? || move.to_i < 1 || move.to_i > 9
@@ -66,6 +76,6 @@ while game
          else
            switch_user(player_two, board, move_counter)
          end
-  board.display_board
+  display_board(board)
   move_counter += 1
 end

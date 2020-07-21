@@ -13,17 +13,7 @@ class Board
       end
     end
   end
-
-  def display_board
-    (0..@board.length - 1).each do |i|
-      (0..@board.length - 1).each do |j|
-        print @board[i][j].to_s + ' '
-      end
-      puts
-    end
-    puts
-  end
-
+  
   def win_check(mark)
     return true if check_in_row(mark) || check_in_column(mark) || check_in_diagonal(mark) || check_in_cross(mark)
 
