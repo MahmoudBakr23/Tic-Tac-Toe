@@ -78,6 +78,15 @@ $ cd Tic-Tac-Toe
 
 - email: (talhawaqar007@gmail.com)
 
+
+👤 **Mugirase Emmanuel**
+
+- Github: [@descholar-ceo](https://www.github.com/descholar-ceo)
+
+- Twitter: [@descholar3](https://www.twitter.com/descholar3)
+
+- Linkedin: [MUGIRASE Emmanuel](https://www.linkedin.com/in/mugirase-emmanuel-a90b49143)
+
 ## �� Contributing
 
 Contributions, issues and feature requests are welcome!
