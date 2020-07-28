@@ -15,7 +15,32 @@ describe Board do
       expect(board.win_check(player_mark)).to eql(true)
     end
 
-    it "when it's a column"
+    it "when it's a column" do
+      
+      board.mark_on_board(1, player_mark)
+      board.mark_on_board(4, player_mark)
+      board.mark_on_board(7, player_mark)
+
+      expect(board.win_check(player_mark)).to eql(true)
+    end
+
+    it "when it's a diagonal" do
+      
+      board.mark_on_board(1, player_mark)
+      board.mark_on_board(5, player_mark)
+      board.mark_on_board(9, player_mark)
+
+      expect(board.win_check(player_mark)).to eql(true)
+    end
+
+    it "when it's a cross" do
+      
+      board.mark_on_board(3, player_mark)
+      board.mark_on_board(5, player_mark)
+      board.mark_on_board(7, player_mark)
+
+      expect(board.win_check(player_mark)).to eql(true)
+    end
   end
 
 end
